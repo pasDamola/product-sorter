@@ -1,4 +1,4 @@
-package main
+package product
 
 import (
 	"fmt"
@@ -14,14 +14,14 @@ type Product struct {
 	ViewsCount int
 }
 
-func (p Product) String() string {
-	return fmt.Sprintf("ID: %d, Name: %-15s, Price: %5.2f, Sales/View Ratio: %.4f, Created: %s",
-		p.ID, p.Name, p.Price, p.salesPerViewRatio(), p.Created.Format("2006-01-02"))
-}
-
-func (p *Product) salesPerViewRatio() float64 {
+func (p *Product) SalesPerViewRatio() float64 {
 	if p.ViewsCount == 0 {
 		return 0.0
 	}
 	return float64(p.SalesCount) / float64(p.ViewsCount)
+}
+
+func (p Product) String() string {
+	return fmt.Sprintf("ID: %d, Name: %-15s, Price: %5.2f, Sales/View Ratio: %.4f, Created: %s",
+		p.ID, p.Name, p.Price, p.SalesPerViewRatio(), p.Created.Format("2006-01-02"))
 }

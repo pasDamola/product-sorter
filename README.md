@@ -27,11 +27,11 @@ product-sorter/
 ├── main.go
 └── internal/
     ├── product/
-    │   └── product.go        # Defines the Product model
+    │   └── product.go        
     └── sorter/
-        ├── sorter.go         # Contains the main SortProducts function
-        ├── strategies.go     # Defines the SortingStrategy interface and concrete implementations
-        └── strategies_test.go # Unit tests for the strategies
+        ├── sorter.go         
+        ├── strategies.go     
+        └── strategies_test.go
 ```
 The core logic is placed within the `internal` directory to demonstrate good package encapsulation, making it private to this module.
 
@@ -43,7 +43,7 @@ The core logic is placed within the `internal` directory to demonstrate good pac
 ### Running the Application
 1. Clone the repository:
    ```sh
-   git clone https://github.com/your-username/product-sorter.git
+   git clone https://github.com/pasDamola/product-sorter.git
    cd product-sorter
    ```
 2. Run the main application to see a demonstration of the different sorting strategies:
